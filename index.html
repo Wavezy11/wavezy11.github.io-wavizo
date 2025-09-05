@@ -1,0 +1,1919 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wavizo - Professionele Webdesign & Ontwikkeling</title>
+    <meta name="description" content="Wavizo biedt professionele webdesign en ontwikkeling diensten. Van maatwerkwebsites tot e-commerce oplossingen. Neem contact op voor een gratis consult.">
+    <meta name="keywords" content="webdesign, website ontwikkeling, e-commerce, SEO, responsive design, Nederland">
+    <meta name="author" content="Wavizo">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Wavizo - Professionele Webdesign & Ontwikkeling">
+    <meta property="og:description" content="Wavizo biedt professionele webdesign en ontwikkeling diensten. Van maatwerkwebsites tot e-commerce oplossingen.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://wavizo.nl">
+    <meta property="og:image" content="https://wavizo.nl/og-image.jpg">
+    <meta property="og:site_name" content="Wavizo">
+    
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Wavizo - Professionele Webdesign & Ontwikkeling">
+    <meta name="twitter:description" content="Wavizo biedt professionele webdesign en ontwikkeling diensten. Van maatwerkwebsites tot e-commerce oplossingen.">
+    <meta name="twitter:image" content="https://wavizo.nl/og-image.jpg">
+    
+    <link rel="canonical" href="https://wavizo.nl">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <!-- Added Google Fonts for better typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Header Styles */
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            color: #000;
+        }
+
+        .logo-icon {
+            width: 2.5rem;
+            height: 2.5rem;
+            background: linear-gradient(135deg, #7c3aed 0%, #3b82f6 100%);
+            border-radius: 0.375rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.25rem;
+        }
+
+        .logo-text {
+            font-weight: bold;
+            font-size: 1.25rem;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .nav {
+            display: none;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav a:hover {
+            color: #7c3aed;
+        }
+
+        .mobile-menu-btn {
+            display: block;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #333;
+        }
+
+        .mobile-nav {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 1rem;
+        }
+
+        .mobile-nav.active {
+            display: block;
+        }
+
+        .mobile-nav a {
+            display: block;
+            padding: 0.75rem 0;
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .mobile-nav a:last-child {
+            border-bottom: none;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #f6eeff 0%, #ffffff 100%);
+            padding: 8rem 0 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .hero .subtitle {
+            font-size: 1.25rem;
+            color: #666;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .hero-slider {
+            position: relative;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .slider-container {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide {
+            min-width: 100%;
+            position: relative;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        .slide-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+            color: white;
+            padding: 2rem;
+            text-align: left;
+        }
+
+        .slide-overlay h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .slider-dots {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #ddd;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .dot.active {
+            background: #7c3aed;
+        }
+
+        /* Button Styles */
+        .btn-primary {
+            background: linear-gradient(135deg, #7c3aed 0%, #3b82f6 100%);
+            color: white;
+            padding: 0.875rem 2rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(124, 58, 237, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #7c3aed;
+            padding: 0.875rem 2rem;
+            border: 2px solid #7c3aed;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .btn-secondary:hover {
+            background: #7c3aed;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 4rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .section-header p {
+            font-size: 1.125rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            /* Changed from auto-fit to 3x3 grid layout for diensten section */
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid #f0f0f0;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-icon {
+            width: 3rem;
+            height: 3rem;
+            background: linear-gradient(135deg, #7c3aed 0%, #3b82f6 100%);
+            border-radius: 0.5rem;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.1);
+        }
+
+        .service-icon i {
+            color: white;
+            font-size: 1.25rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #1a1a1a;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .service-card .subtitle {
+            color: #7c3aed;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Portfolio Section */
+        .portfolio {
+            background: #f6eeff;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .portfolio-item {
+            position: relative;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .portfolio-item:hover {
+            transform: scale(1.05);
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: all 0.3s ease;
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            color: white;
+            padding: 1.5rem;
+            transform: translateY(100%);
+            transition: all 0.3s ease;
+        }
+
+        .portfolio-item:hover .portfolio-overlay {
+            transform: translateY(0);
+        }
+
+        .portfolio-overlay h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Pricing Section */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .pricing-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            position: relative;
+            border: 1px solid #f0f0f0;
+            transition: all 0.3s ease;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .pricing-card.featured {
+            border: 2px solid #7c3aed;
+            transform: scale(1.05);
+        }
+
+        .pricing-badge {
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #7c3aed 0%, #3b82f6 100%);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 1rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+
+        .pricing-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #1a1a1a;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .pricing-price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #7c3aed;
+            margin-bottom: 1rem;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .pricing-price span {
+            font-size: 1rem;
+            color: #666;
+            font-weight: 400;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .pricing-features li {
+            padding: 0.5rem 0;
+            color: #666;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .pricing-features li i {
+            color: #22c55e;
+            font-size: 0.875rem;
+        }
+
+        .pricing-card .btn-primary {
+            width: 100%;
+            background: linear-gradient(135deg, #7c3aed 0%, #3b82f6 100%);
+            margin-top: auto;
+        }
+
+        .pricing-card .btn-primary:hover {
+            box-shadow: 0 10px 25px rgba(124, 58, 237, 0.4);
+        }
+
+        /* Testimonials Section */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border: 1px solid #f0f0f0;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .stars {
+            display: flex;
+            gap: 0.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .star {
+            color: #fbbf24;
+            width: 1rem;
+            height: 1rem;
+        }
+
+        .testimonial-text {
+            color: #666;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+            line-height: 1.6;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 3rem;
+            height: 3rem;
+            background: linear-gradient(135deg, #7c3aed 0%, #3b82f6 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 1.25rem;
+        }
+
+        .author-info h4 {
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 0.25rem;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .author-info p {
+            color: #666;
+            font-size: 0.875rem;
+        }
+
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(135deg, #7c3aed 0%, #3b82f6 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .cta-content h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .cta-content p {
+            font-size: 1.125rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-white {
+            background: white;
+            color: #7c3aed;
+            padding: 0.875rem 2rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .btn-white:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-outline-white {
+            background: transparent;
+            color: white;
+            padding: 0.875rem 2rem;
+            border: 2px solid white;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .btn-outline-white:hover {
+            background: white;
+            color: #7c3aed;
+            transform: translateY(-2px);
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 1rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border: 1px solid #f0f0f0;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .contact-icon {
+            width: 3rem;
+            height: 3rem;
+            background: linear-gradient(135deg, #7c3aed 0%, #3b82f6 100%);
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover .contact-icon {
+            transform: scale(1.1);
+        }
+
+        .contact-icon i {
+            color: white;
+            font-size: 1.25rem;
+        }
+
+        .contact-details h3 {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #1a1a1a;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .contact-details p {
+            color: #666;
+            margin-bottom: 0.25rem;
+        }
+
+        .contact-details .subtitle {
+            color: #7c3aed;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .social-link {
+            width: 2rem;
+            height: 2rem;
+            background: #f6eeff;
+            border-radius: 0.375rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #7c3aed;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: #7c3aed;
+            color: white;
+            transform: scale(1.1);
+        }
+
+        /* Contact Form */
+        .contact-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            border: 1px solid #f0f0f0;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #333;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.875rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #7c3aed;
+            box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        /* Footer */
+        .footer {
+            background: #f6eeff;
+            color: #333;
+            padding: 3rem 0 1rem;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        /* Added success state styles for contact form */
+        .form-success {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 1rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            border: 1px solid #f0f0f0;
+        }
+
+        .success-checkmark {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: #10b981;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: checkmarkBounce 0.6s ease-out;
+        }
+
+        .success-checkmark svg {
+            width: 40px;
+            height: 40px;
+            color: white;
+            animation: checkmarkDraw 0.8s ease-out 0.2s both;
+        }
+
+        @keyframes checkmarkBounce {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+            50% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes checkmarkDraw {
+            0% {
+                stroke-dasharray: 0 100;
+                stroke-dashoffset: 0;
+            }
+            100% {
+                stroke-dasharray: 100 0;
+                stroke-dashoffset: 0;
+            }
+        }
+
+        .success-message {
+            margin-bottom: 2rem;
+        }
+
+        .success-message h3 {
+            color: #10b981;
+            margin-bottom: 0.5rem;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .success-message p {
+            color: #6b7280;
+            line-height: 1.6;
+        }
+
+        .success-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-secondary {
+            background: #f3f4f6;
+            color: #374151;
+            padding: 0.875rem 1.5rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-secondary:hover {
+            background: #e5e7eb;
+            transform: translateY(-2px);
+        }
+
+        .form-container {
+            transition: all 0.5s ease;
+        }
+
+        .form-container.hidden {
+            opacity: 0;
+            transform: translateY(20px);
+            pointer-events: none;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: #666;
+            text-decoration: none;
+            margin-bottom: 0.5rem;
+            display: block;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #7c3aed;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #e5e7eb;
+            color: #666;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 3rem;
+            height: 3rem;
+            background: linear-gradient(135deg, #7c3aed 0%, #3b82f6 100%);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(124, 58, 237, 0.4);
+        }
+
+        .back-to-top.visible {
+            display: flex;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            max-width: 500px;
+            width: 100%;
+            position: relative;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #666;
+            transition: color 0.3s ease;
+        }
+
+        .modal-close:hover {
+            color: #333;
+        }
+
+        .modal h2 {
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Responsive Design */
+        @media (min-width: 768px) {
+            .nav {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 4rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.5rem;
+            }
+
+            .section-header h2 {
+                font-size: 3rem;
+            }
+
+            .cta-content h2 {
+                font-size: 3rem;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .hero {
+                padding: 6rem 0 3rem;
+            }
+
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.125rem;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .cta-content h2 {
+                font-size: 2rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .pricing-card.featured {
+                transform: none;
+            }
+
+            .back-to-top {
+                bottom: 1rem;
+                right: 1rem;
+            }
+        }
+
+        .services-grid {
+            display: grid;
+            /* Changed from auto-fit to 2 columns layout for About Us section */
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">
+                    <div class="logo-icon">W</div>
+                    <span class="logo-text">Wavizo</span>
+                </a>
+                
+                <nav class="nav">
+                    <a href="#home">Home</a>
+                    <a href="#diensten">Diensten</a>
+                    <a href="#portfolio">Portfolio</a>
+                    <a href="#prijzen">Prijzen</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+                
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                    <i data-lucide="menu"></i>
+                </button>
+                
+                <div class="mobile-nav" id="mobileNav">
+                    <a href="#home" onclick="closeMobileMenu()">Home</a>
+                    <a href="#diensten" onclick="closeMobileMenu()">Diensten</a>
+                    <a href="#portfolio" onclick="closeMobileMenu()">Portfolio</a>
+                    <a href="#prijzen" onclick="closeMobileMenu()">Prijzen</a>
+                    <a href="#contact" onclick="closeMobileMenu()">Contact</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <h1>Professionele Websites Die Converteren</h1>
+                    <p class="subtitle">Wij creëren moderne, gebruiksvriendelijke websites die uw bedrijf laten groeien. <br>Van eenvoudige websites tot complexe e-commerce oplossingen.</p>
+                    
+                    <div class="hero-buttons">
+                        <button class="btn-primary" onclick="openQuoteModal()">Vraag een offerte aan</button>
+                        <a href="#portfolio" class="btn-secondary">Bekijk ons werk</a>
+                    </div>
+                </div>
+                
+                <div class="hero-slider">
+                    <div class="slider-container" id="sliderContainer">
+                        <div class="slide">
+                            <img src="Elegance Nagelsalon.png" alt="Elegance Nagelsalon">
+                            <div class="slide-overlay">
+                                <h3>Beauty Website</h3>
+                                <p>Moderne website met afspraaksysteem</p>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <img src="cleanpro.png" alt="Cleanpro">
+                            <div class="slide-overlay">
+                                <h3>Retail Website</h3>
+                                <p>Professionele bedrijfswebsite</p>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <img src="beauty center .png" alt="Portfolio Website">
+                            <div class="slide-overlay">
+                                <h3>Beauty Website</h3>
+                                <p>Moderne website met afspraaksysteem</p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="slider-dots" id="sliderDots"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="diensten" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Onze Diensten</h2>
+                <p>Wij bieden een breed scala aan diensten om uw online aanwezigheid te versterken.</p>
+            </div>
+      <div class="services-grid" style="grid-template-columns: repeat(3, 1fr);">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i data-lucide="globe"></i>
+                    </div>
+                    <h3>Webdesign op maat</h3>
+                    <p class="subtitle">Unieke websites die perfect passen bij uw merk</p>
+                    <p>We ontwerpen websites die niet alleen mooi zijn, maar ook functioneel en gebruiksvriendelijk. Elk ontwerp is uniek en volledig aangepast aan uw bedrijf.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i data-lucide="smartphone"></i>
+                    </div>
+                    <h3>Mobielvriendelijke websites</h3>
+                    <p class="subtitle">Perfect werkend op alle apparaten</p>
+                    <p>Alle websites die we maken zijn volledig responsief en werken perfect op mobiele telefoons, tablets en desktops.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i data-lucide="shopping-cart"></i>
+                    </div>
+                    <h3>E-commerce oplossingen</h3>
+                    <p class="subtitle">Verkoop uw producten online</p>
+                    <p>We bouwen professionele webshops waarmee u eenvoudig uw producten online kunt verkopen. Inclusief betalingssystemen en voorraadbeheer.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i data-lucide="search"></i>
+                    </div>
+                    <h3>SEO-optimalisatie</h3>
+                    <p class="subtitle">Beter vindbaar in Google</p>
+                    <p>We optimaliseren uw website voor zoekmachines zodat potentiële klanten u gemakkelijk kunnen vinden.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i data-lucide="edit"></i>
+                    </div>
+                    <h3>Content creatie</h3>
+                    <p class="subtitle">Professionele teksten en afbeeldingen</p>
+                    <p>We helpen u met het creëren van professionele content voor uw website, inclusief teksten en afbeeldingen.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i data-lucide="shield-check"></i>
+                    </div>
+                    <h3>Onderhoud en updates</h3>
+                    <p class="subtitle">Zorgeloos beheer van uw website</p>
+                    <p>We zorgen ervoor dat uw website altijd up-to-date en veilig is met regelmatige updates en onderhoud.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="section" style="background: #f6eeff;">
+        <div class="container">
+            <div class="section-header">
+                <h2>Over Wavizo</h2>
+                <p>Bij Wavizo maken we websites die niet alleen mooi zijn, maar ook écht werken voor uw bedrijf. Wij geloven dat elke onderneming uniek is — daarom bouwen wij maatwerk websites die aansluiten bij uw visie, doelen en doelgroep.</p>
+            </div>
+            
+            <!-- Changed grid from auto-fit to 2 columns for 2x2 layout -->
+            <div class="services-grid" style="grid-template-columns: repeat(2, 1fr);">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i data-lucide="award"></i>
+                    </div>
+                    <h3>Expertise</h3>
+                    <p>Jarenlange ervaring in webdesign en ontwikkeling</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i data-lucide="star"></i>
+                    </div>
+                    <h3>Kwaliteit</h3>
+                    <p>Professionele resultaten die uw verwachtingen overtreffen</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i data-lucide="settings"></i>
+                    </div>
+                    <h3>Maatwerk</h3>
+                    <p>Unieke oplossingen die perfect bij uw bedrijf passen</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i data-lucide="headphones"></i>
+                    </div>
+                    <h3>Support</h3>
+                    <p>Persoonlijk contact en 24/7 ondersteuning</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="section portfolio">
+        <div class="container">
+            <div class="section-header">
+                <h2>Ons Portfolio</h2>
+                <p>Bekijk enkele van onze recent voltooide projecten</p>
+            </div>
+            
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <img src="Elegance Nagelsalon.png" alt="Nagelsalon Website">
+                    <div class="portfolio-overlay">
+                        <h3>E-commerce Platform</h3>
+                        <p>Moderne website met afspraaksysteem</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="cleanpro.png" alt="cleanpro Website">
+                    <div class="portfolio-overlay">
+                        <h3>Retail Website</h3>
+                        <p>Professionele bedrijfswebsite</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="beauty center .png" alt="Portfolio Website">
+                    <div class="portfolio-overlay">
+                        <h3>Beauty Website</h3>
+                        <p>Moderne website met afspraaksysteem</p>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div style="text-align: center; margin-top: 3rem;">
+                <button class="btn-primary">Bekijk meer projecten</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="prijzen" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Onze Pakketten</h2>
+                <p>Transparante prijzen voor elke behoefte. Alle pakketten bevatten gratis domeinregistratie, SSL-certificaat en mobielvriendelijk ontwerp.</p>
+            </div>
+            
+            <div class="pricing-grid">
+                <!-- Updated pricing cards with new information from the text file -->
+                <div class="pricing-card">
+                    <h3>Basis Website</h3>
+                    <div class="pricing-price">€499<span>/vanaf</span></div>
+                    <ul class="pricing-features">
+                        <li><i data-lucide="check"></i> Gratis domeinregistratie</li>
+                        <li><i data-lucide="check"></i> Email ontwerp inbegrepen</li>
+                        <li><i data-lucide="check"></i> Standaard ontwerp</li>
+                        <li><i data-lucide="check"></i> 3 subpagina's</li>
+                        <li><i data-lucide="check"></i> Klantinteractie functionaliteit</li>
+                        <li><i data-lucide="check"></i> SSL-certificaat</li>
+                        <li><i data-lucide="check"></i> Mobielvriendelijk ontwerp</li>
+                        <li><i data-lucide="check"></i> Basis ondersteuning</li>
+                        <li><i data-lucide="check"></i> Groene en veilige webhosting</li>
+                    </ul>
+                    <button class="btn-primary" onclick="scrollToSection('contact')">Kies Basis Pakket</button>
+                </div>
+                
+                <div class="pricing-card featured">
+                    <div class="pricing-badge">Meest gekozen!</div>
+                    <h3>Premium Website</h3>
+                    <div class="pricing-price">€699<span>/vanaf</span></div>
+                    <ul class="pricing-features">
+                        <li><i data-lucide="check"></i> Gratis domeinregistratie</li>
+                        <li><i data-lucide="check"></i> Email ontwerp inbegrepen</li>
+                        <li><i data-lucide="check"></i> Premium ontwerp</li>
+                        <li><i data-lucide="check"></i> 6 subpagina's</li>
+                        <li><i data-lucide="check"></i> Diverse plug-ins inbegrepen</li>
+                        <li><i data-lucide="check"></i> Social media-integratie</li>
+                        <li><i data-lucide="check"></i> Uitgebreidere klantinteractie</li>
+                        <li><i data-lucide="check"></i> SSL-certificaat</li>
+                        <li><i data-lucide="check"></i> Premium ondersteuning</li>
+                        <li><i data-lucide="check"></i> Snelle laadtijd & levering</li>
+                    </ul>
+                    <button class="btn-primary" onclick="openQuoteModal()">Kies Premium</button>
+                </div>
+                
+                <div class="pricing-card">
+                    <h3>Executive Website</h3>
+                    <div class="pricing-price">€999<span>/vanaf</span></div>
+                    <ul class="pricing-features">
+                        <li><i data-lucide="check"></i> Gratis domeinregistratie</li>
+                        <li><i data-lucide="check"></i> Email ontwerp inbegrepen</li>
+                        <li><i data-lucide="check"></i> Executive ontwerp</li>
+                        <li><i data-lucide="check"></i> Onbeperkte subpagina's</li>
+                        <li><i data-lucide="check"></i> Strategisch webdesignadvies</li>
+                        <li><i data-lucide="check"></i> Diverse plug-ins inbegrepen</li>
+                        <li><i data-lucide="check"></i> Social media-integratie</li>
+                        <li><i data-lucide="check"></i> Uitgebreidere klantinteractie</li>
+                        <li><i data-lucide="check"></i> Executive ondersteuning</li>
+                        <li><i data-lucide="check"></i> Optimale SEO-mogelijkheden</li>
+                    </ul>
+                    <button class="btn-primary" onclick="openQuoteModal()">Kies Executive</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section" style="background: #f6eeff;">
+        <div class="container">
+            <div class="section-header">
+                <h2>Wat Onze Klanten Zeggen</h2>
+                <p>Lees de ervaringen van onze tevreden klanten</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i data-lucide="star" class="star" style="fill: currentColor;"></i>
+                        <i data-lucide="star" class="star" style="fill: currentColor;"></i>
+                        <i data-lucide="star" class="star" style="fill: currentColor;"></i>
+                        <i data-lucide="star" class="star" style="fill: currentColor;"></i>
+                        <i data-lucide="star" class="star" style="fill: currentColor;"></i>
+                    </div>
+                    <p class="testimonial-text">"Wavizo heeft onze oude website getransformeerd naar een moderne en gebruiksvriendelijke website. Onze klanten kunnen nu gemakkelijk onze portfolio bekijken en contact met ons opnemen."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">L</div>
+                        <div class="author-info">
+                            <h4>Lisa Jansen</h4>
+                            <p>Jansen Interieur</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i data-lucide="star" class="star" style="fill: currentColor;"></i>
+                        <i data-lucide="star" class="star" style="fill: currentColor;"></i>
+                        <i data-lucide="star" class="star" style="fill: currentColor;"></i>
+                        <i data-lucide="star" class="star" style="fill: currentColor;"></i>
+                        <i data-lucide="star" class="star" style="fill: currentColor;"></i>
+                    </div>
+                    <p class="testimonial-text">"De e-commerce website die Wavizo voor ons heeft gebouwd heeft onze online verkoop met 40% verhoogd. De website is snel, gebruiksvriendelijk en ziet er fantastisch uit."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">P</div>
+                        <div class="author-info">
+                            <h4>Peter Bakker</h4>
+                            <p>Bakker Elektronica</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i data-lucide="star" class="star" style="fill: currentColor;"></i>
+                        <i data-lucide="star" class="star" style="fill: currentColor;"></i>
+                        <i data-lucide="star" class="star" style="fill: currentColor;"></i>
+                        <i data-lucide="star" class="star" style="fill: currentColor;"></i>
+                        <i data-lucide="star" class="star" style="fill: currentColor;"></i>
+                    </div>
+                    <p class="testimonial-text">"Professioneel team dat echt luistert naar je wensen. Ze hebben een prachtige website voor ons restaurant gemaakt die perfect onze sfeer weergeeft."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">M</div>
+                        <div class="author-info">
+                            <h4>Maria van der Berg</h4>
+                            <p>Restaurant De Smaak</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Klaar om uw online aanwezigheid te verbeteren?</h2>
+                <p>Neem vandaag nog contact met ons op voor een gratis consult</p>
+                <div class="cta-buttons">
+                    <button class="btn-white" onclick="openQuoteModal()">Vraag een offerte aan</button>
+                    <button class="btn-outline-white" onclick="scrollToSection('diensten')">Bekijk onze diensten</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Neem Contact Op</h2>
+                <p>Klaar om uw project te bespreken? We horen graag van u!</p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-bottom: 4rem;">
+                <!-- Left column with contact info -->
+                <div>
+                    <div class="contact-item" style="margin-bottom: 2rem;">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Email Ons</h3>
+                            <p>info@wavizo.nl</p>
+                            <p class="subtitle">We reageren binnen 24 uur</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item" style="margin-bottom: 2rem;">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Bel Ons</h3>
+                            <p>+31 6 12345678</p>
+                            <p class="subtitle">Ma-Vr 9:00-17:00</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-share-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Volg Ons</h3>
+                            <p class="subtitle">Blijf op de hoogte van onze laatste projecten</p>
+                            <div class="social-links">
+                                <a href="#" class="social-link">
+                                    <i data-lucide="facebook"></i>
+                                </a>
+                                <a href="#" class="social-link">
+                                    <i data-lucide="instagram"></i>
+                                </a>
+                                <a href="#" class="social-link">
+                                    <i data-lucide="linkedin"></i>
+                                </a>
+                                <a href="#" class="social-link">
+                                    <i data-lucide="twitter"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right column with contact form -->
+                <div class="contact-form">
+                    <!-- Added form container wrapper for animations -->
+                    <div class="form-container" id="formContainer">
+                        <h3 style="margin-bottom: 1.5rem; font-family: 'Poppins', sans-serif;">Stuur ons een bericht</h3>
+                        <!-- Updated form to use Formspree for form handling -->
+                        <form action="https://formspree.io/f/mqadgvpg" method="POST" id="contactForm">
+                            <div class="form-group">
+                                <label for="name">Naam *</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone">Telefoon</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="subject">Onderwerp *</label>
+                                <input type="text" id="subject" name="subject" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Bericht *</label>
+                                <textarea id="message" name="message" required placeholder="Vertel ons over uw project..."></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn-primary" style="width: 100%;" id="submitBtn">
+                                <span id="submitText">Verstuur Bericht</span>
+                                <span id="loadingText" style="display: none;">Verzenden...</span>
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Added success state container -->
+                    <div class="form-success" id="successContainer" style="display: none;">
+                        <div class="success-checkmark">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                        </div>
+                        <div class="success-message">
+                            <h3>Bericht Verzonden!</h3>
+                            <p>Bedankt voor uw bericht. We nemen zo snel mogelijk contact met u op.</p>
+                        </div>
+                        <div class="success-actions">
+                            <button class="btn-secondary" onclick="showNewForm()">Nog een bericht versturen</button>
+                            <a href="#home" class="btn-primary" onclick="scrollToSection('home')">Terug naar home</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Wavizo</h3>
+                    <p>Wij zijn gespecialiseerd in het creëren van moderne, gebruiksvriendelijke websites die uw bedrijf helpen groeien.</p>
+                    <div class="social-links" style="margin-top: 1rem;">
+                        <a href="#" class="social-link">
+                            <i data-lucide="facebook"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i data-lucide="instagram"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i data-lucide="linkedin"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i data-lucide="twitter"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Diensten</h3>
+                    <a href="#diensten">Webdesign</a>
+                    <a href="#diensten">E-commerce</a>
+                    <a href="#diensten">SEO Optimalisatie</a>
+                    <a href="#diensten">Website Onderhoud</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Bedrijf</h3>
+                    <a href="#portfolio">Portfolio</a>
+                    <a href="#prijzen">Prijzen</a>
+                    <a href="#contact">Contact</a>
+                    <a href="#">Privacy Beleid</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p>Email: info@wavizo.nl</p>
+                    <p>Telefoon: +31 6 12345678</p>
+                    <p>Adres: Amsterdam, Nederland</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Wavizo. Alle rechten voorbehouden.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()">
+        <i data-lucide="arrow-up"></i>
+    </button>
+
+    <!-- Quote Modal -->
+    <div class="modal" id="quoteModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeQuoteModal()">&times;</button>
+            <h2>Vraag een Offerte Aan</h2>
+            <!-- Updated quote form to use Formspree -->
+            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" id="quoteForm">
+                <div class="form-group">
+                    <label for="quoteName">Naam *</label>
+                    <input type="text" id="quoteName" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="quoteEmail">Email *</label>
+                    <input type="email" id="quoteEmail" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="quotePhone">Telefoon</label>
+                    <input type="tel" id="quotePhone" name="phone">
+                </div>
+                
+                <div class="form-group">
+                    <label for="quotePackage">Gewenst Pakket</label>
+                    <select id="quotePackage" name="package">
+                        <option value="">Selecteer een pakket</option>
+                        <option value="basis">Basis Website - €499</option>
+                        <option value="premium">Premium Website - €699</option>
+                        <option value="executive">Executive Website - €999</option>
+                        <option value="custom">Op maat</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="quoteMessage">Projectomschrijving *</label>
+                    <textarea id="quoteMessage" name="message" required placeholder="Beschrijf uw project en wensen..."></textarea>
+                </div>
+                
+                <button type="submit" class="btn-primary" style="width: 100%;">Verstuur Aanvraag</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Mobile menu functionality
+        function toggleMobileMenu() {
+            const mobileNav = document.getElementById('mobileNav');
+            mobileNav.classList.toggle('active');
+        }
+
+        function closeMobileMenu() {
+            const mobileNav = document.getElementById('mobileNav');
+            mobileNav.classList.remove('active');
+        }
+
+        // Smooth scrolling
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // Back to top functionality
+        window.addEventListener('scroll', function() {
+            const backToTop = document.getElementById('backToTop');
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Hero slider functionality
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+        const sliderContainer = document.getElementById('sliderContainer');
+        const sliderDots = document.getElementById('sliderDots');
+
+        // Create dots
+        for (let i = 0; i < totalSlides; i++) {
+            const dot = document.createElement('div');
+            dot.className = 'dot';
+            if (i === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => goToSlide(i));
+            sliderDots.appendChild(dot);
+        }
+
+        function goToSlide(slideIndex) {
+            currentSlide = slideIndex;
+            sliderContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
+            
+            // Update dots
+            document.querySelectorAll('.dot').forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide);
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            goToSlide(currentSlide);
+        }
+
+        // Auto-advance slider
+        setInterval(nextSlide, 4000);
+
+        // Modal functionality
+        function openQuoteModal() {
+            document.getElementById('quoteModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeQuoteModal() {
+            document.getElementById('quoteModal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('quoteModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeQuoteModal();
+            }
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+                closeMobileMenu();
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+                header.style.boxShadow = '0 2px 30px rgba(0, 0, 0, 0.15)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+            }
+        });
+
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const submitBtn = document.getElementById('submitBtn');
+            const submitText = document.getElementById('submitText');
+            const loadingText = document.getElementById('loadingText');
+            
+            // Show loading state
+            submitBtn.disabled = true;
+            submitText.style.display = 'none';
+            loadingText.style.display = 'inline';
+            
+            // Create FormData object
+            const formData = new FormData(this);
+            
+            // Submit to Formspree
+            fetch(this.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    showSuccessState();
+                } else {
+                    throw new Error('Network response was not ok');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Er is een fout opgetreden. Probeer het opnieuw.');
+                resetSubmitButton();
+            });
+        });
+
+        function showSuccessState() {
+            const formContainer = document.getElementById('formContainer');
+            const successContainer = document.getElementById('successContainer');
+            
+            // Hide form with animation
+            formContainer.classList.add('hidden');
+            
+            // Show success state after form animation
+            setTimeout(() => {
+                formContainer.style.display = 'none';
+                successContainer.style.display = 'block';
+                
+                // Trigger reflow for animation
+                successContainer.offsetHeight;
+                
+                // Add entrance animation
+                successContainer.style.opacity = '0';
+                successContainer.style.transform = 'translateY(20px)';
+                
+                setTimeout(() => {
+                    successContainer.style.transition = 'all 0.5s ease';
+                    successContainer.style.opacity = '1';
+                    successContainer.style.transform = 'translateY(0)';
+                }, 50);
+            }, 500);
+        }
+
+        function showNewForm() {
+            const formContainer = document.getElementById('formContainer');
+            const successContainer = document.getElementById('successContainer');
+            const form = document.getElementById('contactForm');
+            
+            // Reset form
+            form.reset();
+            resetSubmitButton();
+            
+            // Hide success state
+            successContainer.style.display = 'none';
+            
+            // Show form
+            formContainer.style.display = 'block';
+            formContainer.classList.remove('hidden');
+            
+            // Scroll to form
+            document.querySelector('.contact-form').scrollIntoView({ 
+                behavior: 'smooth', 
+                block: 'center' 
+            });
+        }
+
+        function resetSubmitButton() {
+            const submitBtn = document.getElementById('submitBtn');
+            const submitText = document.getElementById('submitText');
+            const loadingText = document.getElementById('loadingText');
+            
+            submitBtn.disabled = false;
+            submitText.style.display = 'inline';
+            loadingText.style.display = 'none';
+        }
+    </script>
+</body>
+</html>
