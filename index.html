@@ -321,7 +321,6 @@
         /* Services Section */
         .services-grid {
             display: grid;
-            /* Changed from auto-fit to 3x3 grid layout for diensten section */
             grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
             margin-top: 3rem;
@@ -736,6 +735,8 @@
             display: flex;
             gap: 0.5rem;
             margin-top: 0.5rem;
+            /* Align social media icons to the left instead of center */
+            justify-content: flex-start;
         }
 
         .social-link {
@@ -788,8 +789,34 @@
             font-family: inherit;
         }
 
+        /* Added select styling to match input fields */
+        .form-group select {
+            width: 100%;
+            padding: 0.875rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            font-family: inherit;
+            background-color: white;
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+            background-position: right 0.75rem center;
+            background-repeat: no-repeat;
+            background-size: 1.5em 1.5em;
+            padding-right: 2.5rem;
+        }
+
         .form-group input:focus,
         .form-group textarea:focus {
+            outline: none;
+            border-color: #7c3aed;
+            box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
+        }
+
+        /* Added focus styling for select element */
+        .form-group select:focus {
             outline: none;
             border-color: #7c3aed;
             box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
@@ -868,86 +895,8 @@
 
         .success-message h3 {
             color: #10b981;
-        }
-
-        /* Added styles for quote form dropdown */
-        .form-group select {
-            width: 100%;
-            padding: 0.875rem 1rem;
-            border: 2px solid #e5e7eb;
-            border-radius: 0.5rem;
-            font-size: 1rem;
-            background-color: white;
-            color: #374151;
-            transition: all 0.3s ease;
-            appearance: none;
-            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
-            background-position: right 0.75rem center;
-            background-repeat: no-repeat;
-            background-size: 1.5em 1.5em;
-            padding-right: 2.5rem;
-        }
-
-        .form-group select:focus {
-            outline: none;
-            border-color: #7c3aed;
-            box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
-        }
-
-        .form-group select option {
-            padding: 0.5rem;
-            color: #374151;
-        }
-
-        /* Added quote form success state styles */
-        .quote-form-success {
-            text-align: center;
-            padding: 2rem;
-            background: white;
-            border-radius: 1rem;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            border: 1px solid #f0f0f0;
-        }
-
-        .quote-success-checkmark {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            background: #10b981;
-            margin: 0 auto 1.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            animation: checkmarkBounce 0.6s ease-out;
-        }
-
-        .quote-success-checkmark svg {
-            width: 40px;
-            height: 40px;
-            color: white;
-            animation: checkmarkDraw 0.8s ease-out 0.2s both;
-        }
-
-        .quote-success-message {
-            margin-bottom: 2rem;
-        }
-
-        .quote-success-message h3 {
-            color: #10b981;
-            font-size: 1.5rem;
             margin-bottom: 0.5rem;
-        }
-
-        .quote-success-message p {
-            color: #6b7280;
-            font-size: 1rem;
-        }
-
-        .quote-success-actions {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
+            font-family: 'Poppins', sans-serif;
         }
 
         .success-message p {
@@ -1105,6 +1054,9 @@
             font-family: 'Poppins', sans-serif;
         }
 
+        /* Remove the selected package banner styles */
+        /* .selected-package styles removed */
+
         /* Responsive Design */
         @media (min-width: 768px) {
             .nav {
@@ -1132,20 +1084,19 @@
             }
         }
 
-        /* Enhanced mobile responsive styles */
-        @media (max-width: 767px) {
-            body {
+        @media (max-width: 768px) {
+            /* Added overflow-x hidden to html and body to prevent horizontal scrolling */
+            html, body {
                 overflow-x: hidden;
             }
-            
+
             .container {
-                padding: 0 0.75rem;
+                padding: 0 1rem;
                 max-width: 100%;
             }
-            
+
             .hero {
                 padding: 6rem 0 3rem;
-                overflow-x: hidden;
             }
 
             .hero-grid {
@@ -1156,72 +1107,75 @@
 
             .hero h1 {
                 font-size: 2.5rem;
-                word-wrap: break-word;
             }
 
             .hero .subtitle {
                 font-size: 1.125rem;
-                word-wrap: break-word;
             }
 
             .hero-buttons {
                 justify-content: center;
-                flex-direction: column;
-                gap: 1rem;
-                width: 100%;
-            }
-            
-            .hero-buttons .btn {
-                width: 100%;
-                max-width: 280px;
-                margin: 0 auto;
             }
 
             .section-header h2 {
                 font-size: 2rem;
-                word-wrap: break-word;
             }
-            
-            .features-grid,
-            .testimonials-grid,
-            .pricing-grid {
+
+            .cta-content h2 {
+                font-size: 2rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .pricing-card.featured {
+                transform: none;
+            }
+
+            .back-to-top {
+                bottom: 1rem;
+                right: 1rem;
+            }
+
+            /* Services grid changed to single column on mobile */
+            .services-grid {
                 grid-template-columns: 1fr !important;
                 gap: 1.5rem;
             }
-            
-            .feature-card,
-            .testimonial-card,
-            .pricing-card {
-                width: 100%;
-                max-width: none;
-                margin: 0;
+
+            /* Contact grid changed to single column on mobile */
+            .contact-grid {
+                grid-template-columns: 1fr !important;
+                gap: 1.5rem;
             }
 
-            /* Fixed quote form mobile layout */
-            .quote-modal-content {
-                margin: 1rem;
-                max-width: calc(100vw - 2rem);
-                max-height: calc(100vh - 2rem);
-                overflow-y: auto;
+            .contact-item {
+                padding: 1rem;
             }
 
-            .quote-success-actions {
-                flex-direction: column;
-                gap: 0.75rem;
+            /* Contact section 2-column layout changed to single column on mobile */
+            #contact div[style*="grid-template-columns: 1fr 1fr"] {
+                grid-template-columns: 1fr !important;
+                gap: 2rem !important;
             }
 
-            .quote-success-actions .btn {
-                width: 100%;
+            /* Footer content centered on mobile */
+            .footer-content {
+                text-align: center;
+            }
+
+            .footer-section {
+                text-align: center;
+            }
+
+            .footer-bottom {
+                text-align: center;
             }
         }
 
-        .services-grid {
-            display: grid;
-            /* Changed from auto-fit to 2 columns layout for About Us section */
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-            margin-top: 3rem;
-        }
+        /* Removed duplicate services-grid definition that was causing conflicts */
     </style>
 </head>
 <body>
@@ -1475,7 +1429,7 @@
                         <li><i data-lucide="check"></i> Basis ondersteuning</li>
                         <li><i data-lucide="check"></i> Groene en veilige webhosting</li>
                     </ul>
-                    <button class="btn-primary" onclick="scrollToSection('contact')">Kies Basis Pakket</button>
+                    <button class="btn-primary" onclick="openQuoteModal('basis')">Kies Basis Pakket</button>
                 </div>
                 
                 <div class="pricing-card featured">
@@ -1494,7 +1448,8 @@
                         <li><i data-lucide="check"></i> Premium ondersteuning</li>
                         <li><i data-lucide="check"></i> Snelle laadtijd & levering</li>
                     </ul>
-                    <button class="btn-primary" onclick="openQuoteModal()">Kies Premium</button>
+                    <!-- Updated to pass package type to modal -->
+                    <button class="btn-primary" onclick="openQuoteModal('premium')">Kies Premium</button>
                 </div>
                 
                 <div class="pricing-card">
@@ -1512,7 +1467,8 @@
                         <li><i data-lucide="check"></i> Executive ondersteuning</li>
                         <li><i data-lucide="check"></i> Optimale SEO-mogelijkheden</li>
                     </ul>
-                    <button class="btn-primary" onclick="openQuoteModal()">Kies Executive</button>
+                    <!-- Updated to pass package type to modal -->
+                    <button class="btn-primary" onclick="openQuoteModal('executive')">Kies Executive</button>
                 </div>
             </div>
         </div>
@@ -1626,7 +1582,7 @@
                         </div>
                         <div class="contact-details">
                             <h3>Bel Ons</h3>
-                            <p>+31 6 12345678</p>
+                            <p>+31 6 84143386</p>
                             <p class="subtitle">Ma-Vr 9:00-17:00</p>
                         </div>
                     </div>
@@ -1642,7 +1598,7 @@
                                 <a href="#" class="social-link">
                                     <i data-lucide="facebook"></i>
                                 </a>
-                                <a href="#" class="social-link">
+                                <a href="https://www.instagram.com/wavizo.nl/" class="social-link">
                                     <i data-lucide="instagram"></i>
                                 </a>
                                 <a href="#" class="social-link">
@@ -1727,7 +1683,7 @@
                         <a href="#" class="social-link">
                             <i data-lucide="facebook"></i>
                         </a>
-                        <a href="#" class="social-link">
+                        <a href="https://www.instagram.com/wavizo.nl/" class="social-link">
                             <i data-lucide="instagram"></i>
                         </a>
                         <a href="#" class="social-link">
@@ -1758,7 +1714,7 @@
                 <div class="footer-section">
                     <h3>Contact Info</h3>
                     <p>Email: info@wavizo.nl</p>
-                    <p>Telefoon: +31 6 12345678</p>
+                    <p>Telefoon: +31 6 84143386</p>
                     <p>Adres: Amsterdam, Nederland</p>
                 </div>
             </div>
@@ -1776,11 +1732,14 @@
 
     <!-- Quote Modal -->
     <div class="modal" id="quoteModal">
-        <div class="modal-content quote-modal-content">
+        <div class="modal-content">
             <button class="modal-close" onclick="closeQuoteModal()">&times;</button>
             <h2>Vraag een Offerte Aan</h2>
+            <!-- Removed selected package banner -->
             <!-- Updated quote form to use Formspree -->
             <form action="https://formspree.io/f/xeolpyal" method="POST" id="quoteForm">
+                <!-- Removed hidden field for selected package -->
+                
                 <div class="form-group">
                     <label for="quoteName">Naam *</label>
                     <input type="text" id="quoteName" name="name" required>
@@ -1812,29 +1771,8 @@
                     <textarea id="quoteMessage" name="message" required placeholder="Beschrijf uw project en wensen..."></textarea>
                 </div>
                 
-                <!-- Updated quote form button with loading states -->
-                <button type="submit" class="btn-primary" style="width: 100%;" id="quoteSubmitBtn">
-                    <span id="quoteSubmitText">Verstuur Aanvraag</span>
-                    <span id="quoteLoadingText" style="display: none;">Verzenden...</span>
-                </button>
+                <button type="submit" class="btn-primary" style="width: 100%;">Verstuur Aanvraag</button>
             </form>
-        </div>
-
-        <!-- Added quote form success state container -->
-        <div class="quote-form-success" id="quoteSuccessContainer" style="display: none;">
-            <div class="quote-success-checkmark">
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
-                </svg>
-            </div>
-            <div class="quote-success-message">
-                <h3>Aanvraag Verzonden!</h3>
-                <p>Bedankt voor uw aanvraag. We nemen zo spoedig mogelijk contact met u op.</p>
-            </div>
-            <div class="quote-success-actions">
-                <button class="btn-secondary" onclick="showNewQuoteForm()">Nieuwe aanvraag</button>
-                <button class="btn-primary" onclick="closeQuoteModal()">Sluiten</button>
-            </div>
         </div>
     </div>
 
@@ -1909,10 +1847,22 @@
         // Auto-advance slider
         setInterval(nextSlide, 4000);
 
-        // Modal functionality
-        function openQuoteModal() {
-            document.getElementById('quoteModal').classList.add('active');
+        function openQuoteModal(packageType = '') {
+            const modal = document.getElementById('quoteModal');
+            const packageSelect = document.getElementById('quotePackage');
+            
+            modal.classList.add('active');
             document.body.style.overflow = 'hidden';
+            
+            // Pre-select the package based on button clicked
+            if (packageType) {
+                packageSelect.value = packageType;
+            }
+            
+            // Focus on first input for accessibility
+            setTimeout(() => {
+                document.getElementById('quoteName').focus();
+            }, 100);
         }
 
         function closeQuoteModal() {
@@ -1923,6 +1873,12 @@
         // Close modal when clicking outside
         document.getElementById('quoteModal').addEventListener('click', function(e) {
             if (e.target === this) {
+                closeQuoteModal();
+            }
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && document.getElementById('quoteModal').classList.contains('active')) {
                 closeQuoteModal();
             }
         });
@@ -1954,12 +1910,12 @@
             }
         });
 
-        document.getElementById('quoteForm').addEventListener('submit', function(e) {
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
-            const submitBtn = document.getElementById('quoteSubmitBtn');
-            const submitText = document.getElementById('quoteSubmitText');
-            const loadingText = document.getElementById('quoteLoadingText');
+            const submitBtn = document.getElementById('submitBtn');
+            const submitText = document.getElementById('submitText');
+            const loadingText = document.getElementById('loadingText');
             
             // Show loading state
             submitBtn.disabled = true;
@@ -1969,8 +1925,8 @@
             // Create FormData object
             const formData = new FormData(this);
             
-            // Submit to Formspree (you can replace with your own endpoint)
-            fetch('https://formspree.io/f/mqadgvpg', {
+            // Submit to Formspree
+            fetch(this.action, {
                 method: 'POST',
                 body: formData,
                 headers: {
@@ -1979,7 +1935,7 @@
             })
             .then(response => {
                 if (response.ok) {
-                    showQuoteSuccessState();
+                    showSuccessState();
                 } else {
                     throw new Error('Network response was not ok');
                 }
@@ -1987,17 +1943,16 @@
             .catch(error => {
                 console.error('Error:', error);
                 alert('Er is een fout opgetreden. Probeer het opnieuw.');
-                resetQuoteSubmitButton();
+                resetSubmitButton();
             });
         });
 
-        function showQuoteSuccessState() {
-            const formContainer = document.querySelector('.quote-modal-content form');
-            const successContainer = document.getElementById('quoteSuccessContainer');
+        function showSuccessState() {
+            const formContainer = document.getElementById('formContainer');
+            const successContainer = document.getElementById('successContainer');
             
             // Hide form with animation
-            formContainer.style.opacity = '0';
-            formContainer.style.transform = 'translateY(-20px)';
+            formContainer.classList.add('hidden');
             
             // Show success state after form animation
             setTimeout(() => {
@@ -2016,31 +1971,36 @@
                     successContainer.style.opacity = '1';
                     successContainer.style.transform = 'translateY(0)';
                 }, 50);
-            }, 300);
+            }, 500);
         }
 
-        function showNewQuoteForm() {
-            const formContainer = document.querySelector('.quote-modal-content form');
-            const successContainer = document.getElementById('quoteSuccessContainer');
-            const form = document.getElementById('quoteForm');
+        function showNewForm() {
+            const formContainer = document.getElementById('formContainer');
+            const successContainer = document.getElementById('successContainer');
+            const form = document.getElementById('contactForm');
             
             // Reset form
             form.reset();
-            resetQuoteSubmitButton();
+            resetSubmitButton();
             
             // Hide success state
             successContainer.style.display = 'none';
             
             // Show form
             formContainer.style.display = 'block';
-            formContainer.style.opacity = '1';
-            formContainer.style.transform = 'translateY(0)';
+            formContainer.classList.remove('hidden');
+            
+            // Scroll to form
+            document.querySelector('.contact-form').scrollIntoView({ 
+                behavior: 'smooth', 
+                block: 'center' 
+            });
         }
 
-        function resetQuoteSubmitButton() {
-            const submitBtn = document.getElementById('quoteSubmitBtn');
-            const submitText = document.getElementById('quoteSubmitText');
-            const loadingText = document.getElementById('quoteLoadingText');
+        function resetSubmitButton() {
+            const submitBtn = document.getElementById('submitBtn');
+            const submitText = document.getElementById('submitText');
+            const loadingText = document.getElementById('loadingText');
             
             submitBtn.disabled = false;
             submitText.style.display = 'inline';
