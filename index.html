@@ -343,8 +343,8 @@
         }
 
         .service-icon {
-            width: 3rem;
-            height: 3rem;
+            width: 2.5rem; /* reduced from 3rem to make icons smaller */
+            height: 2.5rem; /* reduced from 3rem to make icons smaller */
             background: linear-gradient(135deg, #7c3aed 0%, #3b82f6 100%);
             border-radius: 0.5rem;
             color: white;
@@ -361,7 +361,7 @@
 
         .service-icon i {
             color: white;
-            font-size: 1.25rem;
+            font-size: 1rem; /* reduced from 1.25rem to match smaller icon size */
         }
 
         .service-card h3 {
@@ -800,14 +800,7 @@
             min-height: 120px;
         }
 
-        /* Footer */
-        .footer {
-            background: #f6eeff;
-            color: #333;
-            padding: 3rem 0 1rem;
-            border-top: 1px solid #e5e7eb;
-        }
-
+     
         /* Added success state styles for contact form */
         .form-success {
             text-align: center;
@@ -912,39 +905,62 @@
             pointer-events: none;
         }
 
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
+     
+/* Footer */
+.footer {
+    background: #f7f6ef; /* Licht en consistent met de site */
+    color: #333; /* Donker voor leesbaarheid */
+    padding: 4rem 2rem;
+    font-family: 'Poppins', sans-serif;
+}
 
-        .footer-section h3 {
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: #1a1a1a;
-            font-family: 'Poppins', sans-serif;
-        }
+.footer a {
+    color: #333; /*zelfde als tekstkleur voor consistentie*/
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
 
-        .footer-section p,
-        .footer-section a {
-            color: #666;
-            text-decoration: none;
-            margin-bottom: 0.5rem;
-            display: block;
-            transition: color 0.3s ease;
-        }
+.footer a:hover {
+    color: #b49164; /* Accentkleur van de site */
+}
 
-        .footer-section a:hover {
-            color: #7c3aed;
-        }
+.footer .footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
 
-        .footer-bottom {
-            text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid #e5e7eb;
-            color: #666;
-        }
+.footer .footer-section h3 {
+    color: #7c3aed; /* Net als sectiekoppen elders */
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+}
+
+.footer .social-links {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.footer .social-link i {
+    color: #b49164; /* Accentkleur voor iconen */
+    font-size: 1.2rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.footer .social-link:hover i {
+    color: #7c3aed; /* Hoverkleur net als knoppen en iconen elders */
+    transform: scale(1.2);
+}
+
+.footer .footer-bottom {
+    text-align: center;
+    border-top: 1px solid #e0dcd1; /* subtiele scheidingslijn */
+    padding-top: 1rem;
+    font-size: 0.875rem;
+    color: #666;
+}
 
         /* Back to Top Button */
         .back-to-top {
@@ -995,30 +1011,58 @@
         }
 
         .modal-content {
-            background: white;
+            background-color: #fff;
             padding: 2rem;
             border-radius: 1rem;
-            max-width: 500px;
+            max-width: 600px;
             width: 100%;
-            position: relative;
-            max-height: 90vh;
-            overflow-y: auto;
+            position: relative; /* added position relative for proper close button positioning */
         }
 
         .modal-close {
             position: absolute;
             top: 1rem;
             right: 1rem;
-            background: none;
-            border: none;
             font-size: 1.5rem;
             cursor: pointer;
-            color: #666;
-            transition: color 0.3s ease;
+            background: none; /* added background none */
+            border: none; /* added border none */
+            color: #666; /* added color for better visibility */
+            transition: color 0.3s ease; /* added hover transition */
         }
 
         .modal-close:hover {
+            color: #333; /* added hover state */
+        }
+
+        /* added form styling for better modal appearance */
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
             color: #333;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #7c3aed;
         }
 
         .modal h2 {
@@ -1106,6 +1150,330 @@
             grid-template-columns: repeat(2, 1fr);
             gap: 2rem;
             margin-top: 3rem;
+        }
+
+        /* Services Section */
+        .services-section {
+            padding: 4rem 0;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .service-card {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-icon {
+            width: 3.5rem; /* reduced from 4rem to make icons smaller */
+            height: 3.5rem; /* reduced from 4rem to make icons smaller */
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .service-icon svg {
+            width: 75%;
+            height: 75%;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 4rem 0;
+            background: #f9f9f9;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text {
+            padding: 2rem;
+        }
+
+        .about-image {
+            text-align: center;
+        }
+
+        .about-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 1rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .about-features {
+            margin-top: 2rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .feature-icon {
+            width: 2rem;
+            height: 2rem;
+            margin-right: 1rem;
+            color: #7c3aed;
+        }
+
+        .feature-icon svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .feature-text h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.25rem;
+            color: #333;
+        }
+
+        .feature-text p {
+            color: #666;
+        }
+
+        /* Portfolio Section */
+        .portfolio-section {
+            padding: 4rem 0;
+        }
+
+        .portfolio-filter {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .filter-btn {
+            background: none;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            margin: 0 0.5rem;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            cursor: pointer;
+            color: #333;
+            transition: background-color 0.3s ease;
+        }
+
+        .filter-btn.active {
+            background-color: #7c3aed;
+            color: #fff;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .portfolio-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 1rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 4rem 0;
+            background: #f9f9f9;
+        }
+
+    
+        /* General Styles */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: #666;
+        }
+
+        .btn-primary {
+            background-color: #7c3aed;
+            color: #fff;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #632bb1;
+        }
+
+        /* Header Scroll Effect */
+        .header.scrolled {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Mobile Menu Styles */
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+
+        .bar {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px auto;
+            -webkit-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
+            background-color: #333;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li a {
+            text-decoration: none;
+            color: #333;
+            padding: 0.7rem 1rem;
+            display: block;
+        }
+
+        .nav-links li a:hover {
+            color: #7c3aed;
+        }
+
+        /* Quote Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 1rem;
+            max-width: 600px;
+            width: 100%;
+            position: relative; /* added position relative for proper close button positioning */
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+
+            .hamburger.active .bar:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active .bar:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+
+            .hamburger.active .bar:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+
+            .nav-links {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                gap: 0;
+                flex-direction: column;
+                background-color: #fff;
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            }
+
+            .nav-links li {
+                margin: 16px 0;
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .about-image {
+                order: -1;
+            }
         }
     </style>
 </head>
@@ -1511,7 +1879,7 @@
                         </div>
                         <div class="contact-details">
                             <h3>Bel Ons</h3>
-                            <p>+31 6 12345678</p>
+                            <p>+31 6 84143386</p>
                             <p class="subtitle">Ma-Vr 9:00-17:00</p>
                         </div>
                     </div>
@@ -1643,7 +2011,7 @@
                 <div class="footer-section">
                     <h3>Contact Info</h3>
                     <p>Email: info@wavizo.nl</p>
-                    <p>Telefoon: +31 6 12345678</p>
+                    <p>Telefoon: +31 6 84143386</p>
                     <p>Adres: Amsterdam, Nederland</p>
                 </div>
             </div>
@@ -1665,7 +2033,7 @@
             <button class="modal-close" onclick="closeQuoteModal()">&times;</button>
             <h2>Vraag een Offerte Aan</h2>
             <!-- Updated quote form to use Formspree -->
-            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" id="quoteForm">
+            <form action="https://formspree.io/f/mqadgvpg" method="POST" id="quoteForm">
                 <div class="form-group">
                     <label for="quoteName">Naam *</label>
                     <input type="text" id="quoteName" name="name" required>
