@@ -343,8 +343,8 @@
         }
 
         .service-icon {
-            width: 2.5rem; /* reduced from 3rem to make icons smaller */
-            height: 2.5rem; /* reduced from 3rem to make icons smaller */
+            width: 3rem;
+            height: 3rem;
             background: linear-gradient(135deg, #7c3aed 0%, #3b82f6 100%);
             border-radius: 0.5rem;
             color: white;
@@ -361,7 +361,7 @@
 
         .service-icon i {
             color: white;
-            font-size: 1rem; /* reduced from 1.25rem to match smaller icon size */
+            font-size: 1.25rem;
         }
 
         .service-card h3 {
@@ -800,7 +800,14 @@
             min-height: 120px;
         }
 
-     
+        /* Footer */
+        .footer {
+            background: #f6eeff;
+            color: #333;
+            padding: 3rem 0 1rem;
+            border-top: 1px solid #e5e7eb;
+        }
+
         /* Added success state styles for contact form */
         .form-success {
             text-align: center;
@@ -861,8 +868,86 @@
 
         .success-message h3 {
             color: #10b981;
+        }
+
+        /* Added styles for quote form dropdown */
+        .form-group select {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            background-color: white;
+            color: #374151;
+            transition: all 0.3s ease;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+            background-position: right 0.75rem center;
+            background-repeat: no-repeat;
+            background-size: 1.5em 1.5em;
+            padding-right: 2.5rem;
+        }
+
+        .form-group select:focus {
+            outline: none;
+            border-color: #7c3aed;
+            box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
+        }
+
+        .form-group select option {
+            padding: 0.5rem;
+            color: #374151;
+        }
+
+        /* Added quote form success state styles */
+        .quote-form-success {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 1rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            border: 1px solid #f0f0f0;
+        }
+
+        .quote-success-checkmark {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: #10b981;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: checkmarkBounce 0.6s ease-out;
+        }
+
+        .quote-success-checkmark svg {
+            width: 40px;
+            height: 40px;
+            color: white;
+            animation: checkmarkDraw 0.8s ease-out 0.2s both;
+        }
+
+        .quote-success-message {
+            margin-bottom: 2rem;
+        }
+
+        .quote-success-message h3 {
+            color: #10b981;
+            font-size: 1.5rem;
             margin-bottom: 0.5rem;
-            font-family: 'Poppins', sans-serif;
+        }
+
+        .quote-success-message p {
+            color: #6b7280;
+            font-size: 1rem;
+        }
+
+        .quote-success-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
         }
 
         .success-message p {
@@ -905,62 +990,39 @@
             pointer-events: none;
         }
 
-     
-/* Footer */
-.footer {
-    background: #f7f6ef; /* Licht en consistent met de site */
-    color: #333; /* Donker voor leesbaarheid */
-    padding: 4rem 2rem;
-    font-family: 'Poppins', sans-serif;
-}
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
 
-.footer a {
-    color: #333; /*zelfde als tekstkleur voor consistentie*/
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
+        .footer-section h3 {
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+            font-family: 'Poppins', sans-serif;
+        }
 
-.footer a:hover {
-    color: #b49164; /* Accentkleur van de site */
-}
+        .footer-section p,
+        .footer-section a {
+            color: #666;
+            text-decoration: none;
+            margin-bottom: 0.5rem;
+            display: block;
+            transition: color 0.3s ease;
+        }
 
-.footer .footer-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 2rem;
-    margin-bottom: 2rem;
-}
+        .footer-section a:hover {
+            color: #7c3aed;
+        }
 
-.footer .footer-section h3 {
-    color: #7c3aed; /* Net als sectiekoppen elders */
-    margin-bottom: 1rem;
-    font-size: 1.25rem;
-}
-
-.footer .social-links {
-    display: flex;
-    gap: 0.5rem;
-    margin-top: 0.5rem;
-}
-
-.footer .social-link i {
-    color: #b49164; /* Accentkleur voor iconen */
-    font-size: 1.2rem;
-    transition: transform 0.3s ease, color 0.3s ease;
-}
-
-.footer .social-link:hover i {
-    color: #7c3aed; /* Hoverkleur net als knoppen en iconen elders */
-    transform: scale(1.2);
-}
-
-.footer .footer-bottom {
-    text-align: center;
-    border-top: 1px solid #e0dcd1; /* subtiele scheidingslijn */
-    padding-top: 1rem;
-    font-size: 0.875rem;
-    color: #666;
-}
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #e5e7eb;
+            color: #666;
+        }
 
         /* Back to Top Button */
         .back-to-top {
@@ -1011,58 +1073,30 @@
         }
 
         .modal-content {
-            background-color: #fff;
+            background: white;
             padding: 2rem;
             border-radius: 1rem;
-            max-width: 600px;
+            max-width: 500px;
             width: 100%;
-            position: relative; /* added position relative for proper close button positioning */
+            position: relative;
+            max-height: 90vh;
+            overflow-y: auto;
         }
 
         .modal-close {
             position: absolute;
             top: 1rem;
             right: 1rem;
+            background: none;
+            border: none;
             font-size: 1.5rem;
             cursor: pointer;
-            background: none; /* added background none */
-            border: none; /* added border none */
-            color: #666; /* added color for better visibility */
-            transition: color 0.3s ease; /* added hover transition */
+            color: #666;
+            transition: color 0.3s ease;
         }
 
         .modal-close:hover {
-            color: #333; /* added hover state */
-        }
-
-        /* added form styling for better modal appearance */
-        .form-group {
-            margin-bottom: 1rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
             color: #333;
-        }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.75rem;
-            border: 1px solid #ddd;
-            border-radius: 0.5rem;
-            font-size: 1rem;
-            transition: border-color 0.3s ease;
-        }
-
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #7c3aed;
         }
 
         .modal h2 {
@@ -1098,9 +1132,20 @@
             }
         }
 
+        /* Enhanced mobile responsive styles */
         @media (max-width: 767px) {
+            body {
+                overflow-x: hidden;
+            }
+            
+            .container {
+                padding: 0 0.75rem;
+                max-width: 100%;
+            }
+            
             .hero {
                 padding: 6rem 0 3rem;
+                overflow-x: hidden;
             }
 
             .hero-grid {
@@ -1111,36 +1156,62 @@
 
             .hero h1 {
                 font-size: 2.5rem;
+                word-wrap: break-word;
             }
 
             .hero .subtitle {
                 font-size: 1.125rem;
+                word-wrap: break-word;
             }
 
             .hero-buttons {
                 justify-content: center;
+                flex-direction: column;
+                gap: 1rem;
+                width: 100%;
+            }
+            
+            .hero-buttons .btn {
+                width: 100%;
+                max-width: 280px;
+                margin: 0 auto;
             }
 
             .section-header h2 {
                 font-size: 2rem;
+                word-wrap: break-word;
+            }
+            
+            .features-grid,
+            .testimonials-grid,
+            .pricing-grid {
+                grid-template-columns: 1fr !important;
+                gap: 1.5rem;
+            }
+            
+            .feature-card,
+            .testimonial-card,
+            .pricing-card {
+                width: 100%;
+                max-width: none;
+                margin: 0;
             }
 
-            .cta-content h2 {
-                font-size: 2rem;
+            /* Fixed quote form mobile layout */
+            .quote-modal-content {
+                margin: 1rem;
+                max-width: calc(100vw - 2rem);
+                max-height: calc(100vh - 2rem);
+                overflow-y: auto;
             }
 
-            .cta-buttons {
+            .quote-success-actions {
                 flex-direction: column;
-                align-items: center;
+                gap: 0.75rem;
             }
 
-            .pricing-card.featured {
-                transform: none;
-            }
-
-            .back-to-top {
-                bottom: 1rem;
-                right: 1rem;
+            .quote-success-actions .btn {
+                width: 100%;
             }
         }
 
@@ -1150,330 +1221,6 @@
             grid-template-columns: repeat(2, 1fr);
             gap: 2rem;
             margin-top: 3rem;
-        }
-
-        /* Services Section */
-        .services-section {
-            padding: 4rem 0;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .service-card {
-            background: #fff;
-            padding: 2rem;
-            border-radius: 1rem;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .service-icon {
-            width: 3.5rem; /* reduced from 4rem to make icons smaller */
-            height: 3.5rem; /* reduced from 4rem to make icons smaller */
-            margin: 0 auto 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-        }
-
-        .service-icon svg {
-            width: 75%;
-            height: 75%;
-        }
-
-        .service-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-            color: #333;
-        }
-
-        .service-card p {
-            color: #666;
-            line-height: 1.6;
-        }
-
-        /* About Section */
-        .about-section {
-            padding: 4rem 0;
-            background: #f9f9f9;
-        }
-
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .about-text {
-            padding: 2rem;
-        }
-
-        .about-image {
-            text-align: center;
-        }
-
-        .about-image img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 1rem;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-        }
-
-        .about-features {
-            margin-top: 2rem;
-        }
-
-        .feature-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 1rem;
-        }
-
-        .feature-icon {
-            width: 2rem;
-            height: 2rem;
-            margin-right: 1rem;
-            color: #7c3aed;
-        }
-
-        .feature-icon svg {
-            width: 100%;
-            height: 100%;
-        }
-
-        .feature-text h4 {
-            font-size: 1.2rem;
-            margin-bottom: 0.25rem;
-            color: #333;
-        }
-
-        .feature-text p {
-            color: #666;
-        }
-
-        /* Portfolio Section */
-        .portfolio-section {
-            padding: 4rem 0;
-        }
-
-        .portfolio-filter {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 2rem;
-        }
-
-        .filter-btn {
-            background: none;
-            border: none;
-            padding: 0.75rem 1.5rem;
-            margin: 0 0.5rem;
-            border-radius: 0.5rem;
-            font-size: 1rem;
-            cursor: pointer;
-            color: #333;
-            transition: background-color 0.3s ease;
-        }
-
-        .filter-btn.active {
-            background-color: #7c3aed;
-            color: #fff;
-        }
-
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .portfolio-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 1rem;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-        }
-
-        .portfolio-item img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        /* Contact Section */
-        .contact-section {
-            padding: 4rem 0;
-            background: #f9f9f9;
-        }
-
-    
-        /* General Styles */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .section-header h2 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-            color: #333;
-        }
-
-        .section-header p {
-            font-size: 1.1rem;
-            color: #666;
-        }
-
-        .btn-primary {
-            background-color: #7c3aed;
-            color: #fff;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 0.5rem;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .btn-primary:hover {
-            background-color: #632bb1;
-        }
-
-        /* Header Scroll Effect */
-        .header.scrolled {
-            background-color: #fff;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Mobile Menu Styles */
-        .hamburger {
-            display: none;
-            cursor: pointer;
-        }
-
-        .bar {
-            display: block;
-            width: 25px;
-            height: 3px;
-            margin: 5px auto;
-            -webkit-transition: all 0.3s ease-in-out;
-            transition: all 0.3s ease-in-out;
-            background-color: #333;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-
-        .nav-links li a {
-            text-decoration: none;
-            color: #333;
-            padding: 0.7rem 1rem;
-            display: block;
-        }
-
-        .nav-links li a:hover {
-            color: #7c3aed;
-        }
-
-        /* Quote Modal Styles */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            z-index: 1000;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .modal.active {
-            display: flex;
-        }
-
-        .modal-content {
-            background-color: #fff;
-            padding: 2rem;
-            border-radius: 1rem;
-            max-width: 600px;
-            width: 100%;
-            position: relative; /* added position relative for proper close button positioning */
-        }
-
-        .modal-close {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .hamburger {
-                display: block;
-            }
-
-            .hamburger.active .bar:nth-child(2) {
-                opacity: 0;
-            }
-
-            .hamburger.active .bar:nth-child(1) {
-                transform: translateY(8px) rotate(45deg);
-            }
-
-            .hamburger.active .bar:nth-child(3) {
-                transform: translateY(-8px) rotate(-45deg);
-            }
-
-            .nav-links {
-                position: fixed;
-                left: -100%;
-                top: 70px;
-                gap: 0;
-                flex-direction: column;
-                background-color: #fff;
-                width: 100%;
-                text-align: center;
-                transition: 0.3s;
-                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-            }
-
-            .nav-links li {
-                margin: 16px 0;
-            }
-
-            .nav-links.active {
-                left: 0;
-            }
-
-            .about-content {
-                grid-template-columns: 1fr;
-            }
-
-            .about-image {
-                order: -1;
-            }
         }
     </style>
 </head>
@@ -1879,7 +1626,7 @@
                         </div>
                         <div class="contact-details">
                             <h3>Bel Ons</h3>
-                            <p>+31 6 84143386</p>
+                            <p>+31 6 12345678</p>
                             <p class="subtitle">Ma-Vr 9:00-17:00</p>
                         </div>
                     </div>
@@ -2011,7 +1758,7 @@
                 <div class="footer-section">
                     <h3>Contact Info</h3>
                     <p>Email: info@wavizo.nl</p>
-                    <p>Telefoon: +31 6 84143386</p>
+                    <p>Telefoon: +31 6 12345678</p>
                     <p>Adres: Amsterdam, Nederland</p>
                 </div>
             </div>
@@ -2029,11 +1776,11 @@
 
     <!-- Quote Modal -->
     <div class="modal" id="quoteModal">
-        <div class="modal-content">
+        <div class="modal-content quote-modal-content">
             <button class="modal-close" onclick="closeQuoteModal()">&times;</button>
             <h2>Vraag een Offerte Aan</h2>
             <!-- Updated quote form to use Formspree -->
-            <form action="https://formspree.io/f/mqadgvpg" method="POST" id="quoteForm">
+            <form action="https://formspree.io/f/xeolpyal" method="POST" id="quoteForm">
                 <div class="form-group">
                     <label for="quoteName">Naam *</label>
                     <input type="text" id="quoteName" name="name" required>
@@ -2065,8 +1812,29 @@
                     <textarea id="quoteMessage" name="message" required placeholder="Beschrijf uw project en wensen..."></textarea>
                 </div>
                 
-                <button type="submit" class="btn-primary" style="width: 100%;">Verstuur Aanvraag</button>
+                <!-- Updated quote form button with loading states -->
+                <button type="submit" class="btn-primary" style="width: 100%;" id="quoteSubmitBtn">
+                    <span id="quoteSubmitText">Verstuur Aanvraag</span>
+                    <span id="quoteLoadingText" style="display: none;">Verzenden...</span>
+                </button>
             </form>
+        </div>
+
+        <!-- Added quote form success state container -->
+        <div class="quote-form-success" id="quoteSuccessContainer" style="display: none;">
+            <div class="quote-success-checkmark">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
+                </svg>
+            </div>
+            <div class="quote-success-message">
+                <h3>Aanvraag Verzonden!</h3>
+                <p>Bedankt voor uw aanvraag. We nemen zo spoedig mogelijk contact met u op.</p>
+            </div>
+            <div class="quote-success-actions">
+                <button class="btn-secondary" onclick="showNewQuoteForm()">Nieuwe aanvraag</button>
+                <button class="btn-primary" onclick="closeQuoteModal()">Sluiten</button>
+            </div>
         </div>
     </div>
 
@@ -2186,12 +1954,12 @@
             }
         });
 
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
+        document.getElementById('quoteForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
-            const submitBtn = document.getElementById('submitBtn');
-            const submitText = document.getElementById('submitText');
-            const loadingText = document.getElementById('loadingText');
+            const submitBtn = document.getElementById('quoteSubmitBtn');
+            const submitText = document.getElementById('quoteSubmitText');
+            const loadingText = document.getElementById('quoteLoadingText');
             
             // Show loading state
             submitBtn.disabled = true;
@@ -2201,8 +1969,8 @@
             // Create FormData object
             const formData = new FormData(this);
             
-            // Submit to Formspree
-            fetch(this.action, {
+            // Submit to Formspree (you can replace with your own endpoint)
+            fetch('https://formspree.io/f/mqadgvpg', {
                 method: 'POST',
                 body: formData,
                 headers: {
@@ -2211,7 +1979,7 @@
             })
             .then(response => {
                 if (response.ok) {
-                    showSuccessState();
+                    showQuoteSuccessState();
                 } else {
                     throw new Error('Network response was not ok');
                 }
@@ -2219,16 +1987,17 @@
             .catch(error => {
                 console.error('Error:', error);
                 alert('Er is een fout opgetreden. Probeer het opnieuw.');
-                resetSubmitButton();
+                resetQuoteSubmitButton();
             });
         });
 
-        function showSuccessState() {
-            const formContainer = document.getElementById('formContainer');
-            const successContainer = document.getElementById('successContainer');
+        function showQuoteSuccessState() {
+            const formContainer = document.querySelector('.quote-modal-content form');
+            const successContainer = document.getElementById('quoteSuccessContainer');
             
             // Hide form with animation
-            formContainer.classList.add('hidden');
+            formContainer.style.opacity = '0';
+            formContainer.style.transform = 'translateY(-20px)';
             
             // Show success state after form animation
             setTimeout(() => {
@@ -2247,36 +2016,31 @@
                     successContainer.style.opacity = '1';
                     successContainer.style.transform = 'translateY(0)';
                 }, 50);
-            }, 500);
+            }, 300);
         }
 
-        function showNewForm() {
-            const formContainer = document.getElementById('formContainer');
-            const successContainer = document.getElementById('successContainer');
-            const form = document.getElementById('contactForm');
+        function showNewQuoteForm() {
+            const formContainer = document.querySelector('.quote-modal-content form');
+            const successContainer = document.getElementById('quoteSuccessContainer');
+            const form = document.getElementById('quoteForm');
             
             // Reset form
             form.reset();
-            resetSubmitButton();
+            resetQuoteSubmitButton();
             
             // Hide success state
             successContainer.style.display = 'none';
             
             // Show form
             formContainer.style.display = 'block';
-            formContainer.classList.remove('hidden');
-            
-            // Scroll to form
-            document.querySelector('.contact-form').scrollIntoView({ 
-                behavior: 'smooth', 
-                block: 'center' 
-            });
+            formContainer.style.opacity = '1';
+            formContainer.style.transform = 'translateY(0)';
         }
 
-        function resetSubmitButton() {
-            const submitBtn = document.getElementById('submitBtn');
-            const submitText = document.getElementById('submitText');
-            const loadingText = document.getElementById('loadingText');
+        function resetQuoteSubmitButton() {
+            const submitBtn = document.getElementById('quoteSubmitBtn');
+            const submitText = document.getElementById('quoteSubmitText');
+            const loadingText = document.getElementById('quoteLoadingText');
             
             submitBtn.disabled = false;
             submitText.style.display = 'inline';
