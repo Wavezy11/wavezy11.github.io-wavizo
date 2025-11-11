@@ -3,26 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wavizo - Professionele Webdesign & Ontwikkeling</title>
-    <meta name="description" content="Wavizo biedt professionele webdesign en ontwikkeling diensten. Van maatwerkwebsites tot e-commerce oplossingen. Neem contact op voor een gratis consult.">
+    <title>{{SITE_NAME}} - Professionele Webdesign & Ontwikkeling</title>
+    <meta name="description" content="{{SITE_NAME}} biedt professionele webdesign en ontwikkeling diensten. Van maatwerkwebsites tot e-commerce oplossingen. Neem contact op voor een gratis consult.">
     <meta name="keywords" content="webdesign, website ontwikkeling, e-commerce, SEO, responsive design, Nederland">
-    <meta name="author" content="Wavizo">
+    <meta name="author" content="{{SITE_NAME}}">
     
     <!-- Open Graph Tags -->
-    <meta property="og:title" content="Wavizo - Professionele Webdesign & Ontwikkeling">
-    <meta property="og:description" content="Wavizo biedt professionele webdesign en ontwikkeling diensten. Van maatwerkwebsites tot e-commerce oplossingen.">
+    <meta property="og:title" content="{{SITE_NAME}} - Professionele Webdesign & Ontwikkeling">
+    <meta property="og:description" content="{{SITE_NAME}} biedt professionele webdesign en ontwikkeling diensten. Van maatwerkwebsites tot e-commerce oplossingen.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://wavizo.nl">
-    <meta property="og:image" content="https://wavizo.nl/og-image.jpg">
-    <meta property="og:site_name" content="Wavizo">
+    <meta property="og:url" content="{{SITE_URL}}">
+    <meta property="og:image" content="{{OG_IMAGE}}">
+    <meta property="og:site_name" content="{{SITE_NAME}}">
     
     <!-- Twitter Card Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Wavizo - Professionele Webdesign & Ontwikkeling">
-    <meta name="twitter:description" content="Wavizo biedt professionele webdesign en ontwikkeling diensten. Van maatwerkwebsites tot e-commerce oplossingen.">
-    <meta name="twitter:image" content="https://wavizo.nl/og-image.jpg">
+    <meta name="twitter:title" content="{{SITE_NAME}} - Professionele Webdesign & Ontwikkeling">
+    <meta name="twitter:description" content="{{SITE_NAME}} biedt professionele webdesign en ontwikkeling diensten. Van maatwerkwebsites tot e-commerce oplossingen.">
+    <meta name="twitter:image" content="{{OG_IMAGE}}">
     
-    <link rel="canonical" href="https://wavizo.nl">
+    <link rel="canonical" href="{{SITE_URL}}">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     
     <!-- Added Google Fonts for better typography -->
@@ -1333,14 +1333,6 @@
             color: #ffffff;
             box-shadow: 0 12px 28px rgba(124, 58, 237, 0.45);
         }
-        /* Disable left-to-right hover sweep on success action secondary buttons */
-        .success-actions .btn-secondary::before {
-            content: none !important;
-            display: none !important;
-        }
-        .success-actions .btn-secondary:hover::before {
-            left: -100% !important;
-        }
 
         .form-container {
             transition: all 0.7s ease;
@@ -1621,7 +1613,7 @@
                         </svg>
                     </div>
                     <div class="logo-content">
-                        <span class="logo-text">Wavizo</span>
+                        <span class="logo-text">{{SITE_NAME}}</span>
                       
                     </div>
                 </a>
@@ -2027,7 +2019,7 @@
                         </div>
                         <div class="contact-details">
                             <h3>Email Ons</h3>
-                            <p>info@wavizo.nl</p>
+                            <p>{{CONTACT_EMAIL}}</p>
                             <p class="subtitle">We reageren binnen 24 uur</p>
                         </div>
                     </div>
@@ -2038,7 +2030,7 @@
                         </div>
                         <div class="contact-details">
                             <h3>Bel Ons</h3>
-                            <p>+31 6 84143386</p>
+                            <p>{{CONTACT_PHONE}}</p>
                             <p class="subtitle">Ma-Vr 9:00-17:00</p>
                         </div>
                     </div>
@@ -2051,16 +2043,16 @@
                             <h3>Volg Ons</h3>
                             <p class="subtitle">Blijf op de hoogte van onze laatste projecten</p>
                             <div class="social-links">
-                                <a href="#" class="social-link">
+                                <a href="{{FACEBOOK_URL}}" class="social-link">
                                     <i data-lucide="facebook"></i>
                                 </a>
-                                <a href="https://www.instagram.com/wavizo.nl/" class="social-link">
+                                <a href="{{INSTAGRAM_URL}}" class="social-link">
                                     <i data-lucide="instagram"></i>
                                 </a>
-                                <a href="#" class="social-link">
+                                <a href="{{LINKEDIN_URL}}" class="social-link">
                                     <i data-lucide="linkedin"></i>
                                 </a>
-                                <a href="#" class="social-link">
+                                <a href="{{TWITTER_URL}}" class="social-link">
                                     <i data-lucide="twitter"></i>
                                 </a>
                             </div>
@@ -2074,7 +2066,7 @@
                     <div class="form-container" id="formContainer">
                         <h3 style="margin-bottom: 1.5rem; font-family: 'Poppins', sans-serif;">Stuur ons een bericht</h3>
                         <!-- Updated form to use Formspree for form handling -->
-                        <form action="https://formspree.io/f/mqadgvpg" method="POST" id="contactForm">
+                        <form action="{{FORMSPREE_CONTACT_FORM}}" method="POST" id="contactForm">
                             <div class="form-group">
                                 <label for="name">Naam *</label>
                                 <input type="text" id="name" name="name" required>
@@ -2143,21 +2135,21 @@
                         </svg>
                     </div>
                         <div class="logo-content">
-                            <span class="logo-text" style="font-size: 1.25rem;">Wavizo</span>
+                            <span class="logo-text" style="font-size: 1.25rem;">{{SITE_NAME}}</span>
                         </div>
                     </div>
                     <p>Wij zijn gespecialiseerd in het creëren van moderne, gebruiksvriendelijke websites die uw bedrijf helpen groeien.</p>
                     <div class="social-links" style="margin-top: 1rem;">
-                        <a href="#" class="social-link">
+                        <a href="{{FACEBOOK_URL}}" class="social-link">
                             <i data-lucide="facebook"></i>
                         </a>
-                        <a href="https://www.instagram.com/wavizo.nl/" class="social-link">
+                        <a href="{{INSTAGRAM_URL}}" class="social-link">
                             <i data-lucide="instagram"></i>
                         </a>
-                        <a href="#" class="social-link">
+                        <a href="{{LINKEDIN_URL}}" class="social-link">
                             <i data-lucide="linkedin"></i>
                         </a>
-                        <a href="#" class="social-link">
+                        <a href="{{TWITTER_URL}}" class="social-link">
                             <i data-lucide="twitter"></i>
                         </a>
                     </div>
@@ -2181,14 +2173,14 @@
                 
                 <div class="footer-section">
                     <h3>Contact Info</h3>
-                    <p>Email: info@wavizo.nl</p>
-                    <p>Telefoon: +31 6 84143386</p>
-                    <p>Adres: Amsterdam, Nederland</p>
+                    <p>Email: {{CONTACT_EMAIL}}</p>
+                    <p>Telefoon: {{CONTACT_PHONE}}</p>
+                    <p>Adres: {{CONTACT_ADDRESS}}</p>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2024 Wavizo. Alle rechten voorbehouden.</p>
+                <p>&copy; 2024 {{SITE_NAME}}. Alle rechten voorbehouden.</p>
             </div>
         </div>
     </footer>
@@ -2214,7 +2206,7 @@
             <!-- Removed selected package banner -->
             <!-- Updated quote form to use Formspree -->
             <div class="form-container" id="quoteFormContainer">
-                <form action="https://formspree.io/f/xeolpyal" method="POST" id="quoteForm">
+                <form action="{{FORMSPREE_QUOTE_FORM}}" method="POST" id="quoteForm">
                     <!-- Removed hidden field for selected package -->
                     
                     <div class="form-group">
