@@ -56,6 +56,7 @@ export const metadata: Metadata = {
 
 import LenisProvider from "@/components/LenisProvider";
 import CustomCursor from "@/components/CustomCursor";
+import MobileMotionProvider from "@/components/MobileMotionProvider";
 
 export default function RootLayout({
   children,
@@ -70,7 +71,9 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col font-inter">
         <CustomCursor />
-        <LenisProvider>{children}</LenisProvider>
+        <MobileMotionProvider>
+          <LenisProvider>{children}</LenisProvider>
+        </MobileMotionProvider>
       </body>
     </html>
   );
