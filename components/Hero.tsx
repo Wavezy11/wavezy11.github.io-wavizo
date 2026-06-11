@@ -45,12 +45,12 @@ export default function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6, duration: 1 }}
-              className="flex flex-col sm:flex-row gap-4 pt-4"
+              className="flex flex-col sm:flex-row gap-5 sm:gap-4 pt-4 items-start sm:items-center"
             >
-              <MagneticButton as={Link} href="#contact" className="px-8 py-4 bg-gradient-to-r from-brand-purple to-brand-blue rounded-xl font-bold text-white shadow-lg shadow-brand-purple/25 hover:shadow-brand-purple/40 transition-all text-center">
+              <MagneticButton as={Link} href="#contact" className="inline-block px-8 py-4 bg-gradient-to-r from-brand-purple to-brand-blue rounded-xl font-bold text-white shadow-lg shadow-brand-purple/25 hover:shadow-brand-purple/40 transition-all text-center">
                 Start jouw project
               </MagneticButton>
-              <MagneticButton as={Link} href="#portfolio" className="px-8 py-4 rounded-xl font-medium text-white bg-white/5 backdrop-blur-md border border-white/10 hover:border-white/30 hover:bg-white/10 hover:shadow-[0_0_20px_rgba(255,255,255,0.1)] transition-all text-center">
+              <MagneticButton as={Link} href="#portfolio" className="inline-block px-8 py-4 rounded-xl font-medium text-white bg-white/5 backdrop-blur-md border border-white/10 hover:border-white/30 hover:bg-white/10 hover:shadow-[0_0_20px_rgba(255,255,255,0.1)] transition-all text-center">
                 Bekijk ons werk
               </MagneticButton>
             </motion.div>

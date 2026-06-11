@@ -43,7 +43,7 @@ export default function CustomCursor() {
     <>
       {/* Main dot */}
       <motion.div
-        className="fixed top-0 left-0 w-4 h-4 bg-white rounded-full pointer-events-none z-[9999] mix-blend-difference"
+        className="hidden md:block fixed top-0 left-0 w-4 h-4 bg-white rounded-full pointer-events-none z-[9999] mix-blend-difference"
         animate={{
           x: mousePosition.x - 8,
           y: mousePosition.y - 8,
@@ -58,7 +58,7 @@ export default function CustomCursor() {
       />
       {/* Glowing trail */}
       <motion.div
-        className="fixed top-0 left-0 w-12 h-12 bg-gradient-to-r from-brand-purple via-brand-blue to-brand-cyan rounded-full pointer-events-none z-[9998] opacity-30 blur-md"
+        className="hidden md:block fixed top-0 left-0 w-12 h-12 bg-gradient-to-r from-brand-purple via-brand-blue to-brand-cyan rounded-full pointer-events-none z-[9998] opacity-30 blur-md"
         animate={{
           x: mousePosition.x - 24,
           y: mousePosition.y - 24,

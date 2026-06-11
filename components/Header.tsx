@@ -26,6 +26,7 @@ export default function Header() {
   ];
 
   return (
+    <>
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled ? "bg-[#0A0A0B]/80 backdrop-blur-md border-b border-white/10 py-4 shadow-lg" : "bg-transparent py-6"
@@ -72,6 +73,7 @@ export default function Header() {
           </button>
         </div>
       </div>
+    </header>
 
       {/* Mobile Menu */}
       <AnimatePresence>
@@ -118,6 +120,6 @@ export default function Header() {
           </motion.div>
         )}
       </AnimatePresence>
-    </header>
+    </>
   );
 }
