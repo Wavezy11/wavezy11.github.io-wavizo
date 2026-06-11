@@ -6,8 +6,15 @@ import { motion } from "framer-motion";
 export default function CustomCursor() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
+  const [isMobile, setIsMobile] = useState(true); // Default to true to prevent hydration flash of cursor on mobile
 
   useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    
+    if (window.innerWidth < 768) return;
+
     const updateMousePosition = (e: MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
     };
@@ -36,8 +43,11 @@ export default function CustomCursor() {
       window.removeEventListener("mousemove", updateMousePosition);
       window.removeEventListener("mouseover", handleMouseOver);
       document.body.style.cursor = "auto";
+      window.removeEventListener("resize", () => setIsMobile(window.innerWidth < 768));
     };
   }, []);
+
+  if (isMobile) return null;
 
   return (
     <>

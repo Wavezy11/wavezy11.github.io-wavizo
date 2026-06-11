@@ -4,7 +4,7 @@ import { Mail, Phone, MapPin } from "lucide-react";
 export default function Footer() {
   return (
     <footer className="bg-[#060606] border-t border-white/5 pt-20 pb-10 relative overflow-hidden">
-      <div className="absolute top-0 right-1/4 w-96 h-96 bg-brand-purple/5 blur-[120px] rounded-full pointer-events-none"></div>
+      <div className="hidden lg:block absolute top-0 right-1/4 w-96 h-96 bg-brand-purple/5 blur-[120px] rounded-full pointer-events-none"></div>
       
       <div className="safe-container relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">

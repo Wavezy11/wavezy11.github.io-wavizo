@@ -2,18 +2,28 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import RevealText from "./RevealText";
 import MagneticButton from "./MagneticButton";
 import AnimatedCounter from "./AnimatedCounter";
 import AnimatedHeroDashboard from "./AnimatedHeroDashboard";
 
 export default function Hero() {
+  const [isDesktop, setIsDesktop] = useState(true); // SSR safe-ish, will correct on mount
+
+  useEffect(() => {
+    const checkDesktop = () => setIsDesktop(window.innerWidth >= 1024);
+    checkDesktop();
+    window.addEventListener("resize", checkDesktop);
+    return () => window.removeEventListener("resize", checkDesktop);
+  }, []);
+
   return (
     <section id="home" className="relative min-h-[100svh] flex items-center pt-24 pb-16 overflow-hidden">
       {/* Background Orbs focused behind the mockup */}
-      <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[800px] h-[800px] bg-brand-purple/20 blur-[150px] rounded-full pointer-events-none mix-blend-screen"></div>
-      <div className="absolute top-1/2 right-10 -translate-y-1/2 w-[600px] h-[600px] bg-brand-blue/20 blur-[120px] rounded-full pointer-events-none mix-blend-screen"></div>
-      <div className="absolute top-3/4 right-1/3 -translate-y-1/2 w-[500px] h-[500px] bg-brand-cyan/20 blur-[100px] rounded-full pointer-events-none mix-blend-screen"></div>
+      <div className="hidden lg:block absolute top-1/2 right-1/4 -translate-y-1/2 w-[800px] h-[800px] bg-brand-purple/20 blur-[150px] rounded-full pointer-events-none mix-blend-screen"></div>
+      <div className="hidden lg:block absolute top-1/2 right-10 -translate-y-1/2 w-[600px] h-[600px] bg-brand-blue/20 blur-[120px] rounded-full pointer-events-none mix-blend-screen"></div>
+      <div className="hidden lg:block absolute top-3/4 right-1/3 -translate-y-1/2 w-[500px] h-[500px] bg-brand-cyan/20 blur-[100px] rounded-full pointer-events-none mix-blend-screen"></div>
 
       <div className="safe-container w-full relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">

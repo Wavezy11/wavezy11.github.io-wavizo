@@ -28,8 +28,8 @@ export default function Testimonials() {
   return (
     <section className="py-24 relative z-10 overflow-hidden">
       {/* Background decorations */}
-      <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-brand-purple/5 blur-[120px] rounded-full pointer-events-none"></div>
-      <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-brand-cyan/5 blur-[120px] rounded-full pointer-events-none"></div>
+      <div className="hidden lg:block absolute top-0 right-0 w-1/2 h-1/2 bg-brand-purple/5 blur-[120px] rounded-full pointer-events-none"></div>
+      <div className="hidden lg:block absolute bottom-0 left-0 w-1/2 h-1/2 bg-brand-cyan/5 blur-[120px] rounded-full pointer-events-none"></div>
       
       <div className="safe-container relative">
         <div className="text-center mb-16 max-w-3xl mx-auto">
