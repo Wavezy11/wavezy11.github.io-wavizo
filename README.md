@@ -1,64 +1,36 @@
-# Wavizo Website
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-Website voor Wavizo met environment variable support voor gevoelige data.
+## Getting Started
 
-## Installatie
-
-1. Installeer dependencies:
-```bash
-npm install
-```
-
-2. Kopieer `.env.example` naar `.env`:
-```bash
-copy .env.example .env
-```
-
-3. Pas de waarden in `.env` aan met je eigen gegevens.
-
-## Build
-
-Om de website te builden vanuit de template:
+First, run the development server:
 
 ```bash
-npm run build
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-Dit genereert `index.html` vanuit `index.template.html` door alle placeholders te vervangen met waarden uit het `.env` bestand.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## Environment Variables
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-De volgende variabelen worden gebruikt:
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-- `SITE_URL` - Website URL
-- `SITE_NAME` - Site naam (bijv. "Wavizo")
-- `CONTACT_EMAIL` - Contact email adres
-- `CONTACT_PHONE` - Contact telefoonnummer
-- `CONTACT_ADDRESS` - Contact adres
-- `FORMSPREE_CONTACT_FORM` - Formspree endpoint voor contact formulier
-- `FORMSPREE_QUOTE_FORM` - Formspree endpoint voor offerte formulier
-- `INSTAGRAM_URL` - Instagram URL
-- `FACEBOOK_URL` - Facebook URL
-- `LINKEDIN_URL` - LinkedIn URL
-- `TWITTER_URL` - Twitter URL
-- `OG_IMAGE` - Open Graph image URL
+## Learn More
 
-## Bestanden
+To learn more about Next.js, take a look at the following resources:
 
-- `index.template.html` - Template bestand met placeholders ({{VARIABLE_NAME}})
-- `index.html` - Gebouwde HTML (wordt gegenereerd door build script)
-- `.env` - Environment variables (niet in git, lokaal bestand)
-- `.env.example` - Voorbeeld environment file (wel in git)
-- `build.js` - Build script dat template verwerkt
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-## Opmerkingen
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-- Het `.env` bestand staat in `.gitignore` en wordt niet gecommit naar git
-- Pas altijd `index.template.html` aan, niet `index.html` direct
-- Na wijzigingen in de template, run `npm run build` om de HTML te updaten
+## Deploy on Vercel
 
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-
-
-
-
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
