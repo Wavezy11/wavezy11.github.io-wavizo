@@ -8,7 +8,7 @@ interface MagneticButtonProps {
   className?: string;
   as?: React.ElementType;
   href?: string;
-  [x: string]: any;
+  [x: string]: unknown;
 }
 
 export default function MagneticButton({ children, className = "", as: Component = "button", ...props }: MagneticButtonProps) {

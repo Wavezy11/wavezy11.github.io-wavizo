@@ -1,9 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 import RevealText from "./RevealText";
 import MagneticButton from "./MagneticButton";
 import AnimatedCounter from "./AnimatedCounter";

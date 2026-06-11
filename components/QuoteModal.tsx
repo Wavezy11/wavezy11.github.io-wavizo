@@ -15,12 +15,10 @@ export default function QuoteModal({ isOpen, onClose, preselectedPackage = "" }:
   const [selectedPackage, setSelectedPackage] = useState(preselectedPackage);
 
   useEffect(() => {
-    setSelectedPackage(preselectedPackage);
-  }, [preselectedPackage]);
-
-  useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      setSelectedPackage(preselectedPackage);
     } else {
       document.body.style.overflow = "unset";
       // Reset after close animation
@@ -29,7 +27,7 @@ export default function QuoteModal({ isOpen, onClose, preselectedPackage = "" }:
     return () => {
       document.body.style.overflow = "unset";
     };
-  }, [isOpen]);
+  }, [isOpen, preselectedPackage]);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -52,7 +50,7 @@ export default function QuoteModal({ isOpen, onClose, preselectedPackage = "" }:
       } else {
         setStatus("error");
       }
-    } catch (error) {
+    } catch {
       setStatus("error");
     }
   };
